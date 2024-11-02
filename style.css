@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap');
+
+:root {
+    --purple: #4b46c6;
+    --yellow: #c3df23;
+    --pink: #bf3ce7;
+}
+
+body {
+    height: 100vh;
+    background-color: var(--purple);
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+    cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="%23000" d="M22 11c-4.96 0-9-4.04-9-9 0-1.32-2-1.32-2 0 0 4.96-4.04 9-9 9-1.32 0-1.32 2 0 2 4.96 0 9 4.04 9 9 0 1.32 2 1.32 2 0 0-4.96 4.04-9 9-9 1.32 0 1.32-2 0-2Z"></path></svg>'), auto;
+}
+
+.star {
+    width: 350px;
+    height: 350px;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    background-color: var(--yellow);
+    display: inline-block;
+    margin-top: 150px;
+    margin-left: 150px;
+    text-align: center;
+    line-height: 320px; 
+    color: var(--pink);
+    font-family: rubik wet paint;
+    font-size: 30px;
+    text-transform: capitalize;
+    transition: transform 1.5s;
+    position: relative;
+}
+
+.star:hover {
+    transform: scale(2) rotate(360deg);
+    color: var(--yellow);
+    background-color: var(--pink);
+    clip-path: polygon(50% 10%, 60% 40%, 90% 40%, 65% 60%, 75% 90%, 50% 70%, 25% 90%, 35% 60%, 10% 40%, 40% 40%);
+}
+
+.star-container div {
+    position: absolute;
+    animation: fall linear infinite, twinkle linear infinite;
+    width: 50px;
+    height: 50px;
+}
+
+.falling-star {
+    clip-path: polygon(50% 10%, 60% 40%, 90% 40%, 65% 60%, 75% 90%, 50% 70%, 25% 90%, 35% 60%, 10% 40%, 40% 40%);
+    position: absolute;
+}
+
+.falling-star:hover {
+    clip-path: polygon(50% 10%, 60% 40%, 90% 40%, 65% 60%, 75% 90%, 50% 70%, 25% 90%, 35% 60%, 10% 40%, 40% 40%);
+    transform: scale(2);
+    transition: transform 0.1s, background-color 0.1s;
+}
+
+@keyframes fall {
+    0% {
+        top: 0px;
+        opacity: 1;
+    }
+    100% {
+        top: 100vh;
+        opacity: 0;
+    }
+}
+
+@keyframes twinkle {
+    0% {
+        opacity: 0.3;
+        background-color: var(--yellow);
+    }
+    15% {
+        opacity: 1;
+        background-color: var(--pink);
+    }
+    30% {
+        opacity: 0.3;
+        background-color: var(--yellow);
+    }
+    45% {
+        opacity: 1;
+        background-color: var(--pink);
+    }
+    60% {
+        opacity: 0.3;
+        background-color: var(--yellow);
+    }
+    75% {
+        opacity: 1;
+        background-color: var(--pink);
+    }
+   90% {
+        opacity: 0.3;
+        background-color: var(--yellow);
+    }
+
+    
+}
+
